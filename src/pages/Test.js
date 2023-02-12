@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import Question from "../components/Question";
 import { useLocation } from "react-router-dom";
@@ -24,8 +24,9 @@ function Test() {
     const { testid } = location.state
     console.log(testid);
     const res = getQuestion(testid)
-    console.log(res);
+    // console.log(res);
     let flag = isValid(res)
+
 
     const onChange = React.useCallback((value, viewUpdate) => {
     console.log("value:", value);
